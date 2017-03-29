@@ -18,8 +18,10 @@ public class KnightsTourControlPanel extends JPanel {
 	int BUTTON_HEIGHT;
 	int BUTTON_Y;
 	int INCREMENT;
+	KnightsTourPanel TP;
 
-	public KnightsTourControlPanel(int w, int h) {
+	public KnightsTourControlPanel(int w, int h, KnightsTourPanel tp) {
+		TP = new KnightsTourPanel(w, h*3);
 		WIDTH = w;
 		BUTTON_WIDTH = 140;
 		BUTTON_HEIGHT = 50;
@@ -28,7 +30,9 @@ public class KnightsTourControlPanel extends JPanel {
 		this.setPreferredSize(new Dimension(w, h));
 		this.setBackground(new Color(51, 102, 255));
 		setUpButtonsAndSliders();
+		tp = TP;
 	}
+
 
 
 	/* Add all the buttons and sliders used to control this Knight's tour.
