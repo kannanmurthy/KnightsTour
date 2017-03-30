@@ -25,6 +25,7 @@ public class KnightsTourPanel extends JPanel implements MouseListener {
 	int GRID_HEIGHT;
 	private Timer t;
 	Dimension d;
+	Knight k;
 	private boolean clicked = false;
 	public int[][] knightGrid = {{2,3,4,4,4,4,3,2},
 			{3,4,6,6,6,6,4,3},
@@ -47,6 +48,7 @@ public class KnightsTourPanel extends JPanel implements MouseListener {
 		GRID_WIDTH = WIDTH/knightGrid.length;
 		GRID_HEIGHT = HEIGHT/knightGrid[0].length;
 		addMouseListener();
+
 //		t.start();
 	}
 

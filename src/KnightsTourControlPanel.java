@@ -60,7 +60,7 @@ public class KnightsTourControlPanel extends JPanel {
 		start.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getKnightsTourPanel(new KnightsTourPanel(600, 800));
+				TP.start();
 				repaint();
 			}
 
@@ -77,13 +77,10 @@ public class KnightsTourControlPanel extends JPanel {
 		pause.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getKnightsTourPanel(new KnightsTourPanel(600, 800));
+				TP.pause();
 				repaint();
 			}
 
-			private void getKnightsTourPanel(KnightsTourPanel tp) {
-				tp.pause();
-			}
 		});
 
 
@@ -95,13 +92,10 @@ public class KnightsTourControlPanel extends JPanel {
 		optimize.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getKnightsTourPanel(new KnightsTourPanel(600, 800));
+				TP.makeThoughtfulMove();
 				repaint();
 			}
 
-			private void getKnightsTourPanel(KnightsTourPanel tp) {
-				tp.makeThoughtfulMove();
-			}
 		});
 
 		JButton random = new JButton("Random");
@@ -112,13 +106,10 @@ public class KnightsTourControlPanel extends JPanel {
 		random.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				getKnightsTourPanel(new KnightsTourPanel(600, 800));
+				TP.makeRandomMove();
 				repaint();
 			}
 
-			private void getKnightsTourPanel(KnightsTourPanel tp) {
-				tp.makeRandomMove();
-			}
 		});
 
 		JSlider speedSlider = new JSlider(JSlider.HORIZONTAL,
