@@ -26,6 +26,16 @@ public class Knight {
             e.printStackTrace();
         }
     }
+    public int getCol() {
+        return this.col;
+    }
+    public void set(int r, int c) {
+        this.row = r;
+        this.col = c;
+    }
+    public int getRow(){
+        return this.row;
+    }
 
     public void draw(Graphics g) {
         g.drawImage(knight,col,row,null);

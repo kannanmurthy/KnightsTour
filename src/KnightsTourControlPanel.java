@@ -1,7 +1,8 @@
-//<<<<<<< HEAD
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -19,20 +20,20 @@ public class KnightsTourControlPanel extends JPanel {
 	int BUTTON_Y;
 	int INCREMENT;
 	KnightsTourPanel TP;
+	private boolean clicked = false;
 
 	public KnightsTourControlPanel(int w, int h, KnightsTourPanel tp) {
-		TP = new KnightsTourPanel(w, h*3);
+		TP = new KnightsTourPanel(w, h * 3);
 		WIDTH = w;
 		BUTTON_WIDTH = 140;
 		BUTTON_HEIGHT = 50;
 		BUTTON_Y = 80;
-		INCREMENT = (WIDTH - (4*BUTTON_WIDTH))/5;
+		INCREMENT = (WIDTH - (4 * BUTTON_WIDTH)) / 5;
 		this.setPreferredSize(new Dimension(w, h));
 		this.setBackground(new Color(51, 102, 255));
 		setUpButtonsAndSliders();
 		tp = TP;
 	}
-
 
 
 	/* Add all the buttons and sliders used to control this Knight's tour.
@@ -54,7 +55,7 @@ public class KnightsTourControlPanel extends JPanel {
 
 		JButton start = new JButton("Start");
 		this.add(start);
-		start.setBounds(INCREMENT, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT );
+		start.setBounds(INCREMENT, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
 		start.setFont(new Font("Arial", Font.PLAIN, 30));
 		start.setFocusPainted(false);
 		start.addActionListener(new ActionListener() {
@@ -71,7 +72,7 @@ public class KnightsTourControlPanel extends JPanel {
 
 		JButton pause = new JButton("Pause");
 		this.add(pause);
-		pause.setBounds((2*INCREMENT + BUTTON_WIDTH), BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT );
+		pause.setBounds((2 * INCREMENT + BUTTON_WIDTH), BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
 		pause.setFont(new Font("Arial", Font.PLAIN, 30));
 		pause.setFocusPainted(false);
 		pause.addActionListener(new ActionListener() {
@@ -86,7 +87,7 @@ public class KnightsTourControlPanel extends JPanel {
 
 		JButton optimize = new JButton("Optimize");
 		this.add(optimize);
-		optimize.setBounds(3*INCREMENT + 2*BUTTON_WIDTH, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT );
+		optimize.setBounds(3 * INCREMENT + 2 * BUTTON_WIDTH, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
 		optimize.setFont(new Font("Arial", Font.PLAIN, 30));
 		optimize.setFocusPainted(false);
 		optimize.addActionListener(new ActionListener() {
@@ -100,7 +101,7 @@ public class KnightsTourControlPanel extends JPanel {
 
 		JButton random = new JButton("Random");
 		this.add(random);
-		random.setBounds(4*INCREMENT + 3*BUTTON_WIDTH, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT );
+		random.setBounds(4 * INCREMENT + 3 * BUTTON_WIDTH, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
 		random.setFont(new Font("Arial", Font.PLAIN, 30));
 		random.setFocusPainted(false);
 		random.addActionListener(new ActionListener() {
@@ -121,38 +122,11 @@ public class KnightsTourControlPanel extends JPanel {
 		speedSlider.setBounds(260, 10, 280, 40);
 
 
-
 	}
+
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 	}
-
 }
-//=======
-//import java.awt.*;
-//
-//import javax.swing.JPanel;
-///* One of the tricky things you have to figure out is how to have
-// * the controls in the control panel talk to the KnightsTourPanel.
-// * I know you'll figure out a way.  DON'T USE STATIC METHODS!!!!!
-// */
-//
-//public class KnightsTourControlPanel extends JPanel {
-//
-//	public KnightsTourControlPanel(int w, int h) {
-//		this.setPreferredSize(new Dimension(w, h));
-//		this.setBackground(Color.orange);
-//		setUpButtonsAndSliders();
-//	}
-//
-//	/* Add all the buttons and sliders used to control this Knight's tour.
-//	 * It is best if you allow the placement of the components to be handled
-//	 * by a layout manager.  You can find out lots about layouts if you google
-//	 * it!  You can also bind key events to the buttons and sliders, as well
-//	 */
-//	private void setUpButtonsAndSliders() {
-//
-//	}
-//}
-//>>>>>>> a95284cdb57482ba4f1e1f29f3a7fc127f19ad1a
+
