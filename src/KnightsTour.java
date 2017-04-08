@@ -150,7 +150,7 @@ public class KnightsTour {
 		int numMovesAvailable = numMovesAvailable(currRow, currCol);
 		while (true) {
 			if (numMovesAvailable(currRow, currCol) == 0) {
-				JOptionPane.showMessageDialog(null, "There are no more available moves");
+				JOptionPane.showMessageDialog(null, "No moves possible");
 				return false; 
 			}
 			//sets up the map with possible places to go to
